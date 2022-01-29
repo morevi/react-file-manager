@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { FileManager } from './components/FileManager';
 
-const url = 'http://localhost:5000/list'
+const url = 'http://localhost:5000/list';
+const fakeList = ([
+    "storage/carpeta/",
+    "storage/carpeta/archivo.zip",
+    "storage/archivo_1.zip",
+    "storage/archivo_2.gpg",
+    "storage/carpeta/mas_carpetas/",
+    "storage/carpeta/mas_carpetas/archivo.asc",
+]).sort();
 
 export function App() {
-    const [fileList, setFileList] = useState([]);
+    const [fileList, setFileList] = useState(fakeList);
 
     useEffect(() => {
         fetch(url)
@@ -15,7 +23,7 @@ export function App() {
                     setFileList(data.files);
                 },
                 (error) => {
-                    setFileList([])
+                    setFileList(fakeList)
                 }
             );
     }, []);
