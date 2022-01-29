@@ -96,7 +96,7 @@ export function Row({ workdir, setWorkDir, isDir, file }) {
                 <td ref={fileRef}>{file}</td>
                 <td>
                     <button onClick={handleGoIn} className="btn btn-link" disabled={disabled}>Go inside</button>
-                    <button onClick={handleDelete} className="btn btn-link">Delete</button>
+                    <button onClick={handleDelete} className="btn btn-link" disabled>Delete</button>
                 </td>
             </tr>
         );
@@ -106,8 +106,8 @@ export function Row({ workdir, setWorkDir, isDir, file }) {
             <tr>
                 <td ref={fileRef}>{file}</td>
                 <td>
-                    <button onClick={handleDownload} className="btn btn-link">Download</button>
-                    <button onClick={handleDelete} className="btn btn-link">Delete</button>
+                    <button onClick={handleDownload} className="btn btn-link" disabled>Download</button>
+                    <button onClick={handleDelete} className="btn btn-link" disabled>Delete</button>
                 </td>
             </tr>
         );
