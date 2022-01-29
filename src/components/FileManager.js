@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useRef } from 'react';
 
 function isSimplePath(path) {
-    return (path.endsWith('/') && path.split('/').length == 2) || path.split('/').length == 1;
+    return (path.endsWith('/') && path.split('/').length === 2) || path.split('/').length === 1;
 }
 
 function filterBy(directory, files) {
@@ -11,7 +11,7 @@ function filterBy(directory, files) {
         let tmp = v.replace(directory, '');
 
         if (!directory.startsWith(v)) {
-            let tmp = v.replace(directory, '');
+            tmp = v.replace(directory, '');
             if (isSimplePath(tmp)) {
                 filtered.push(tmp);
             }
